@@ -10,6 +10,7 @@ class IntArray
     public:
         // IntArray();
         IntArray(int len);
+        IntArray(const IntArray& other);
         ~IntArray();
         int length();
         bool set_elem(int pos, int value);
