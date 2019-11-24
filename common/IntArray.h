@@ -1,3 +1,9 @@
+/**
+ * @author Eric
+ * @file Description 数组类头文件
+ * @desc Created on 2019-11-24 4:48:07 pm
+ * @copyright
+ */
 #ifndef __INTARRAY_H__
 #define __INTARRAY_H__
 
@@ -17,6 +23,8 @@ class IntArray
         // IntArray(const IntArray& other);
         ~IntArray();
         int length();
+        int& operator [](int idx);
+        IntArray& self();
         bool set_elem(int pos, int value);
         bool get_elem(int pos, int &value);
 };

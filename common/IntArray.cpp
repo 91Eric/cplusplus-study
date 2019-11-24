@@ -1,7 +1,15 @@
+/**
+ * @author Eric
+ * @file Description 数组类对象实现
+ * @desc Created on 2019-11-24 4:42:41 pm
+ * @copyright 
+ */
 #include "IntArray.h"
 #include <cstdio>
 #include <cstdlib>
 #include <new>
+#include <iostream>
+
 using namespace std;
 
 IntArray::IntArray(int len)
@@ -81,6 +89,16 @@ bool IntArray::get_elem(int pos, int &value)
 */
 // }
 
+int& IntArray::operator [](int idx)
+{
+    return m_pointer[idx];
+}
+
+IntArray& IntArray::self()
+{
+    return *this;
+}
+
 IntArray::~IntArray()
 {
     m_len = 0;
@@ -89,14 +107,9 @@ IntArray::~IntArray()
 
 int main(int argc, char const *argv[])
 {
-    /* code */
-    IntArray *p = IntArray::new_instance(3);
-    IntArray b = *p;
-    int i = 0;
-    int j = 0;
-    b.set_elem(1, 22);
-    p->get_elem(1, j);
-    if (b.get_elem(1, i))
-        printf("%d %d\n", i, j);
+    IntArray* p = IntArray::new_instance(3);
+    IntArray& arr = p->self();
+    arr[1] = 1;
+    cout << arr[1] << endl;
     return 0;
 }
