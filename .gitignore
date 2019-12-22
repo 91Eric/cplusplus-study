@@ -1,4 +1,6 @@
 .vscode
 stl
 practice
-**/a.out
+**/*.out
+**/*.i
+**/*.o
